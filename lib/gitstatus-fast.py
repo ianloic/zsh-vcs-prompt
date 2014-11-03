@@ -75,11 +75,11 @@ def main():
     #check_before_running()
 
     # Start proess to get full name of the current branch (like refs/heads/master).
-    p_branch_ref = Cmd('git symbolic-ref HEAD')
+    p_branch_ref = Cmd('git rev-parse --short --symbolic-full-name HEAD')
     # Start process to get the git top directory.
     p_top_dir = Cmd('git rev-parse --show-toplevel')
-    # Start proess to get the current branch name.
-    p_branch = Cmd('git symbolic-ref --short HEAD')
+    # Start process to get the current branch name.
+    p_branch = Cmd('git rev-parse --short --symbolic HEAD')
 
     # Get full name of the current barnch (like refs/heads/master).
     try:
